@@ -36,7 +36,14 @@ function renderTasks() {
             <span>${task.text}</span>
             <button class="edit-btn">Edit</button>
             <button class="delete-btn">Delete</button>
-            `;
-            
+        `;
+
+        // Toggle Completion
+        li.querySelector("input").addEventListener("change", () => {
+            task.completed = !task.completed;
+            saveTasks()
+        });
+
+
     })
 }
