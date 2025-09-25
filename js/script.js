@@ -44,6 +44,16 @@ function renderTasks() {
             saveTasks()
         });
 
+        // Edit task
+        li.querySelector(".edit-btn").addEventListener("click", () => {
+            const newText = prompt("Edit task:", task.text);
+            if (newText) {
+                task.text = newText.trim();
+                saveTasks();
+                renderTasks()
+            }
+        })
+
 
     })
 }
