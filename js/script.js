@@ -52,8 +52,17 @@ function renderTasks() {
                 saveTasks();
                 renderTasks()
             }
-        })
+        });
 
 
-    })
+        // Delete task
+        li.querySelector(".delete-btn").addEventListener("click", () => {
+            tasks = task.filter(deleteTask => deleteTask.id !== task.id);
+            saveTasks();
+            renderTasks();
+        });
+
+        taskList.appendChild(li);
+
+    });
 }
