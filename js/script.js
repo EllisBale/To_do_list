@@ -25,3 +25,18 @@ addTaskBtn.addEventListener("click", () => {
     
     taskInput.value = "";
 });
+
+// Render Tasks
+function renderTasks() {
+    taskList.innerHTML = "";
+    tasks.forEach(task => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+            <input type="checkbox" ${task.completed ? "checked": ""}>
+            <span>${task.text}</span>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+            `;
+            
+    })
+}
